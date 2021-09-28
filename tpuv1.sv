@@ -3,8 +3,8 @@ module tpuv1
     parameter BITS_AB=8,
     parameter BITS_C=16,
     parameter DIM=8,
-    parameter ADDRW=16;
-    parameter DATAW=64;
+    parameter ADDRW=16,
+    parameter DATAW=64
     )
    (
     input clk, rst_n, r_w, // r_w=0 read, =1 write
