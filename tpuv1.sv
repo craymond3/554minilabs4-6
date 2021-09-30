@@ -27,8 +27,8 @@ module tpuv1
 	logic signed [BITS_C-1:0] Cout [DIM-1:0];
 	logic [$clog2(DIM)-1:0] Crow;
 	logic signed [BITS_C-1:0] Creg [DIM-1:0];
-	logic [ADDRW-1:0] dataOutInt; 
-	logic [$clog2(2*DIM)-1:0] timer;
+	logic [DATAW-1:0] dataOutInt; 
+	logic [$clog2(3*DIM)-1:0] timer;
 	logic busy;
 	
 	logic a_mem_range;
@@ -119,7 +119,6 @@ module tpuv1
 					Ain [i] = 'b0;
 					Bin [i] = 'b0;
 					Cin [i] = 'b0;
-					Creg [i] = 'b0;
 				end
 			if(busy)
 				begin
@@ -201,7 +200,6 @@ module tpuv1
 							Ain [i] = 'b0;
 							Bin [i] = 'b0;
 							Cin [i] = 'b0;
-							Creg [i] = 'b0;
 						end
 				end
 		end
