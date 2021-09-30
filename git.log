@@ -1,3 +1,74 @@
+commit 105135dfdb9de7319a9de884931ee4a32637b79a
+Merge: 3d3fa9f 9101fe2
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Thu Sep 30 16:48:02 2021 -0500
+
+    Merge branch 'main' of https://github.com/craymond3/554minilabs4-6 into main
+
+commit 3d3fa9f2e153307b2fd35b859a5646e679e6b0fb
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Thu Sep 30 16:47:56 2021 -0500
+
+    Create afu_default.fit.summary
+    
+    added afu synth output
+
+commit 9101fe2975d26b869f23a3544b103f6720adead3
+Author: Colton Raymond <55898834+craymond3@users.noreply.github.com>
+Date:   Thu Sep 30 15:36:15 2021 -0500
+
+    Create integrated_tb_results.log
+
+commit f7e6b33e532d59bf043599026aeab3f0e12c3589
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Thu Sep 30 15:18:42 2021 -0500
+
+    Update tpuv1.sv
+    
+    Passes test
+
+commit aea709b3ca9e6aa67cee2e55653f148fbf2882ed
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Thu Sep 30 14:52:24 2021 -0500
+
+    Create fifo.sv
+
+commit 10e9a80731ee4bf8e7fc00c3bc1ef510d59df01c
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Thu Sep 30 14:45:32 2021 -0500
+
+    Update tpuv1.sv
+
+commit ca129ca485760c077363c55e566e05bd86ffa5f2
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Wed Sep 29 20:41:25 2021 -0500
+
+    Update tpuv1.sv
+
+commit 59e5eb80b4158ae3566ee733dc4dc1f8577e7c2a
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Tue Sep 28 16:27:13 2021 -0500
+
+    added instantiation of other modules
+
+commit d78814334b57853ed36220a9797655286a124bd0
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Tue Sep 28 16:10:57 2021 -0500
+
+    Added components, corrected parameters in tpuv1
+
+commit e989ff3819e3992b50bcb7ce313c6b38cf7a5a1c
+Author: Colton Raymond <55898834+craymond3@users.noreply.github.com>
+Date:   Tue Sep 28 16:02:33 2021 -0500
+
+    Add Minilab 5 Files
+
+commit c211789518e992ea61bab2abd7109f758f43faba
+Author: Colton Raymond <55898834+craymond3@users.noreply.github.com>
+Date:   Tue Sep 28 15:46:57 2021 -0500
+
+    Add files via upload
+
 commit 52cc841d7e5eca4ed26c2531ea88654fc68be0ca
 Author: cdupont2 <61169398+cdupont2@users.noreply.github.com>
 Date:   Tue Sep 28 15:37:22 2021 -0500
