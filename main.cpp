@@ -28,7 +28,8 @@
 #include <cstdio>
 #include <climits>
 #include <unistd.h>
-
+#include <time.h>
+#include <math.h>
 #include <opae/utils.h>
 
 #include "AFU.h"
@@ -53,7 +54,7 @@ using namespace std;
 typedef int8_t AB_TYPE;
 typedef int16_t C_TYPE;
 #define DIM 8
-#define DIM_FULL DIM
+#define DIM_FULL 128
 #define MAX_VAL _UI16_MAX
 #define DEBUG false
 
@@ -210,25 +211,46 @@ int main(int argc, char *argv[]) {
 			}
 		}
 	}
-	
-	for(int i = 0; i < DIM_FULL/DIM; i += DIM) {
-		for(int j = 0; j < DIM_FULL/DIM; j+=DIM) {
+
+	timespec start, end, start_compute, end_compute; 
+        long total_compute, total_time;
+        total_compute = 0;
+        total_time = 0;
+        clock_gettime(CLOCK_REALTIME, &start);
+	for(int i = 0; i < DIM_FULL; i += DIM) {
+		for(int j = 0; j < DIM_FULL; j+=DIM) {
 			for(int m = 0; m < DIM; m++) {
-				send_row_C(m, output[i+m][j], afu);
+				send_row_C(m, &output[i+m][j], afu);
 			}
-			for(int k = 0; k < DIM_FULL/DIM; k+=DIM) {
+			for(int k = 0; k < DIM_FULL; k+=DIM) {
 				for(int m = 0; m < DIM; m++) {
-					send_row_A(m, A_vals[i+m][k], afu);
-					send_row_B(m, B_vals[k+m][j], afu);
+					send_row_A(m, &A_vals[i+m][k], afu);
+					send_row_B(m, &B_vals[k+m][j], afu);
 				}
+                                clock_gettime(CLOCK_REALTIME,&start_compute);
 				afu.write(0x0400, 100);
+                                clock_gettime(CLOCK_REALTIME,&end_compute);
+
+                                total_compute += (end_compute.tv_nsec - start_compute.tv_nsec);
+                               // printf("end_compute_ns: %li\n", end_compute.tv_nsec);
+                               // printf("start_compute+ns: %li\n", start_compute.tv_nsec);
+                               // printf("Total Compute: %li\n", total_compute);
 			}
 			for(int m = 0; m < DIM; m++) {
-				unpack_from_C(m, output[i+m][j], afu);
+				unpack_from_C(m, &output[i+m][j], afu);
 			}
 		}
 	}
-	
+	clock_gettime(CLOCK_REALTIME,&end);
+        total_time = (end.tv_nsec - start.tv_nsec);
+	long ops = (long)(2*(pow(DIM_FULL,3)));
+	printf("Total time: %li\n", total_time);
+	printf("Total Compute: %li\n", total_compute);
+	printf("Ops: %li\n", ops);
+	double ops_rate = (((double)ops)/total_time)/1000;
+	double compute_ops_rate = (((double)ops)/total_compute)/1000;
+	printf("Ops Rate: %lf\n", ops_rate);
+	printf("Compute Ops Rate: %lf\n", compute_ops_rate);
 	
 
 //	// Now try it with the AFU.
