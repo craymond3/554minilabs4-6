@@ -1,3 +1,53 @@
+commit d6129df04e746e4d13f38227b93b8dfe6698de1e
+Author: Colton Raymond <55898834+craymond3@users.noreply.github.com>
+Date:   Tue Oct 5 23:18:23 2021 -0500
+
+    Create lab6graph.png
+
+commit 6676125114bd069d31f7cffd4868a0238ba27bbc
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Tue Oct 5 22:12:42 2021 -0500
+
+    Main works! We have data!
+    
+    Working main and output logs
+
+commit cf163e5e736b9261bc68f021844685528532d33e
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Tue Oct 5 17:11:39 2021 -0500
+
+    Update main.cpp
+    
+    Added fancy loop and updated to handle wide matrices on 8x8
+
+commit 455925e9ed020f36511bca7961c83c2f5031742b
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Tue Oct 5 16:21:44 2021 -0500
+
+    Create 8x8_result.log
+    
+    8x8 log
+
+commit d5d85d97f297d494493107ca9972af55b46894ab
+Author: cdupont2 <cdupont2@wisc.edu>
+Date:   Tue Oct 5 14:49:48 2021 -0500
+
+    Create tpumac_tb.sv
+    
+    added my testbench
+
+commit d0272b4c9aaca9f1e86888e345c34c9e66483e08
+Author: Colton Raymond <55898834+craymond3@users.noreply.github.com>
+Date:   Thu Sep 30 17:07:33 2021 -0500
+
+    Create main.cpp for minilab 6
+
+commit 26f39f15fb48ae1d3d27b5c3b3a2672db67a954a
+Author: Colton Raymond <55898834+craymond3@users.noreply.github.com>
+Date:   Thu Sep 30 16:50:22 2021 -0500
+
+    Update git.log for minilab 5
+
 commit 105135dfdb9de7319a9de884931ee4a32637b79a
 Merge: 3d3fa9f 9101fe2
 Author: cdupont2 <cdupont2@wisc.edu>
